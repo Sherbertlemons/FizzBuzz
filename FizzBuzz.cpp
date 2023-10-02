@@ -3,6 +3,10 @@
 #include <map>
 
 std::string FizzBuzz(int first, int last) {
+
+    if (first > last) {
+        return "Fail";
+    }
     std::string output = "";
 
     // Set out the rules for the FizzBuzz game
@@ -40,15 +44,4 @@ std::string FizzBuzz(int first, int last) {
     }
 
     return output;
-}
-
-int main() {
-
-    // Call the function specifying the starting number and last number
-    std::string FizzBuzz_output = FizzBuzz(100, 200);
-
-    // Output the  result from the function
-    std::cout << FizzBuzz_output << std::endl;
-
-    return 0;
 }
