@@ -45,3 +45,12 @@ std::string FizzBuzz(int first, int last) {
 
     return output;
 }
+
+#if !defined(RUN_TESTS) || (RUN_TESTS == 0)
+
+int main() {
+    std::cout << "Hello World" << std::endl;
+}
+
+
+#endif

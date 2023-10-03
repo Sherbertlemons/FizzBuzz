@@ -1,3 +1,5 @@
+#define RUN_TESTS 1  // Set to 1 to run tests
+
 #include "FizzBuzz.cpp"  // Include the source file of your code
 #include <gtest/gtest.h>
 
