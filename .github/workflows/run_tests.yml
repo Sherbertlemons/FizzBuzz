@@ -13,12 +13,7 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v2
 
-      - name: Set up CMake
-        uses: lukka/run-cmake@v1
-        with:
-          cmakeListsOrSettingsJsonPath: . # Adjust this path if necessary
-
-      - name: Build and Run Tests
+      - name: Compile and Run Tests
         run: |
-          cmake --build . --config Release
-          ctest --output-on-failure
+          g++ -o FizzBuzz FizzBuzz.cpp FizzBuzz.tests.cpp
+          ./FizzBuzz
