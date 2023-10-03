@@ -18,7 +18,17 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v2
 
+      - name: Install Google Test
+        run: |
+          sudo apt-get update
+          sudo apt-get install libgtest-dev
+          sudo apt-get install cmake # install CMake for building Google Test
+          cd /usr/src/googletest
+          sudo cmake CMakeLists.txt
+          sudo make
+          sudo cp *.a /usr/lib
+
       - name: Compile and Run Tests
         run: |
-          g++ -o FizzBuzz FizzBuzz.cpp FizzBuzz.tests.cpp
+          g++ -o FizzBuzz FizzBuzz.cpp FizzBuzz.tests.cpp -lgtest -lgtest_main -pthread
           ./FizzBuzz
