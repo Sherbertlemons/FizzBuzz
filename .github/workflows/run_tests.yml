@@ -1,4 +1,4 @@
-name: CI
+name: Run FizzBuzz tests
 
 on:
   push:
