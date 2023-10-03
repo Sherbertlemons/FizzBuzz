@@ -22,7 +22,7 @@ jobs:
         cd /usr/src/gtest
         sudo cmake CMakeLists.txt
         sudo make
-        sudo cp *.a /usr/lib
+        sudo mv *.a /usr/lib/
       env:
         GTEST_ROOT: /usr/src/gtest
 
